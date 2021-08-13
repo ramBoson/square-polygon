@@ -402,6 +402,8 @@ const dbcallalgobuy=async()=>{
     
     //let kreq =[];
     firebase.database().ref("imagerefpolybuy").child(getalgo).on("value", (data) => {
+
+      
       if (data) {
         data.forEach((d) => {
           //console.log("keycheck",d.key)

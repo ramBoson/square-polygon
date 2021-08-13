@@ -224,22 +224,21 @@ useEffect(()=>{usernameget()},[])
   const viewhistory=()=>{
 
     console.log("viewhistory inside");
-    setIsOpen(true)
+
+    //setIsOpen(true)
     let get=[];
     // get=item.url;
 
+    //console.log("histo",item.url)
     get.push({
-      address:item.url,
-      asset:item.title
+      address:item.categoryText,
+      asset:item.title,
+      owaddress:item.bid
     })
-
     sethistorydb(get)
-    
     console.log("gettt",get)
-
-    // setIsOpen(true)
     
-    
+    setIsOpen(true)  
   }
 
   return (

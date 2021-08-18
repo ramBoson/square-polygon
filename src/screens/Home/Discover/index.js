@@ -10,7 +10,7 @@ import firebase from "../../UploadDetails/firebase"
 //import firebase from "../UploadDetails/firebase";
 // data
 //import { bids } from "../../../mocks/bids";
-import CardBuy from "../../../components/CardBuy";
+//import CardBuy from "../../../components/CardBuy";
 import CardDiscover from "../../../components/CardDiscover";
 import { Link } from "react-router-dom";
 
@@ -108,6 +108,22 @@ const Discover = () => {
   
 }
   useEffect(()=>{dbcallsaleal()},[])
+
+
+  const filterdata=()=>{
+
+    //alert("filterdata function calling")
+    console.log("filterprice",values[0])
+    if(values[0] === '') return getI
+    let data= getI.filter((val)=>{
+      console.log(val.price.trim().includes(values[0]))      
+      return val.price.trim().includes(values[0])      
+    })
+    //console.log('returndata',data)
+    return data;    
+
+  }
+
 
   const STEP = 0.1;
   const MIN = 0.01;
@@ -291,7 +307,7 @@ const Discover = () => {
                 )}
               />
               <div className={styles.scale}>
-                <div className={styles.number}>0.01 MATIC</div>
+                <div className={styles.number}>0.1 MATIC</div>
                 <div className={styles.number}>10 MATIC</div>
               </div>
             </div>
@@ -304,9 +320,13 @@ const Discover = () => {
             {...settings}
           >
 
-            {getI.map((x, index) => (
+            {/* {getI.map((x, index) => (
               <CardDiscover className={styles.card} item={x} key={index} />
-            ))}
+            ))} */}
+
+            {filterdata().map((x, index) => (                              
+                <CardDiscover className={styles.card} item={x} key={index} />                
+              ))}
           </Slider>
         </div>
         </Link>

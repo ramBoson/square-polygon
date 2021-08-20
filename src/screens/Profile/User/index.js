@@ -141,10 +141,20 @@ const User = ({ className, item }) => {
     <>
 
       <div className={cn(styles.user, className)}>
-        
-          { getprodata === "" || getprodata === null ? (
 
+      {(localStorage.getItem("wallet") === null || localStorage.getItem("wallet") === "0x" ) ? 
+        (
+        <>
+        <div className={styles.avatar}>            
 <img src="/images/logocifis.png" alt="Avatar" />
+</div>
+        </>):(
+          <>
+                    { getprodata === "" || getprodata === null ? (
+
+<div className={styles.avatar}>            
+<img src="/images/logocifis.png" alt="Avatar" />
+</div>
           ):(
 
             <>
@@ -165,6 +175,11 @@ const User = ({ className, item }) => {
 </>
    
           )}
+
+
+          </>
+        )
+}
           
           
         

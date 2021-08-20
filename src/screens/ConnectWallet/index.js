@@ -61,6 +61,13 @@ const Connect = () => {
         await web3.eth.getAccounts().then(()=>{          
           console.log("acc Algo",accounts[0])
           localStorage.setItem("wallet",accounts[0])
+          let refprofile=fireDb.database().ref(`profiledata/${accounts[0]}`);
+    let dateset=new Date().toDateString();
+    console.log("dateget",dateset)
+    const db = refprofile.push().key;
+    console.log("dbcheck",db)
+          refprofile.set({profileurl:"aaa",displayname:"aaa",http:"",Bio:"",social:"",Twitter:"",address:"",dbkey:"",username:"bbb"}).then(()=>{                      
+          })                
           setIsOpen(true)        
         }).then(()=>{
         })        

@@ -43,10 +43,10 @@ const Card = ({ className, item }) => {
     
     fireDb.database().ref(`imagereflikes/${accounts[0]}`).child(item.highestBid).set({
       id:item.title,imageUrl:item.image,priceSet:item.price,cAddress:item.categoryText,keyId:item.highestBid,
-      userName:item.counter,userSymbol:"BNB",ipfsUrl:item.image,
+      userName:item.counter,userSymbol:"MATIC",ipfsUrl:item.image,
       ownerAddress:accounts[0],soldd:"",extra1:"ready to sold",
       previousoaddress:"",datesets:new Date().toDateString(),
-      description:"",whois:'likes'      
+      description:"",whois:'likes',league:item.league,team:item.team
       }).then(()=>{
         setVisible(!visible)
         window.location.reload(false)   
@@ -91,18 +91,16 @@ const Card = ({ className, item }) => {
       setIsOpens(true)
       fireDb.database().ref(`imagerefexplorepoly/${accounts[0]}`).child(item.highestBid).set({
       id:item.title,imageUrl:item.image,priceSet:item.price,cAddress:item.categoryText,keyId:item.highestBid,
-      userName:item.counter,userSymbol:"BNB",ipfsUrl:item.image,
+      userName:item.counter,userSymbol:"MATIC",ipfsUrl:item.image,
       ownerAddress:accounts[0],soldd:"",extra1:"ready to sold",
       previousoaddress:"",datesets:new Date().toDateString(),
-      description:"",whois:'Sellers'      
+      description:"",whois:'Sellers',league:item.league,team:item.team
       }).then(()=>{
 
         fireDb.database().ref(`imagerefPoly/${accounts[0]}`).child(item.highestBid).remove();
           console.log("remove db");
           setIsOpens(false)
           window.location.reload(false)   
-
-
       })
     
 
@@ -240,15 +238,30 @@ else{
             //   soldd:"",extra1:"readytosold",datesets:new Date().toDateString(),whois:'Sellers'
             // })            
 fireDb.database().ref(`imagerefPoly/${accounts[0]}`).child(item.highestBid).update({
-              id:item.title,imageUrl:item.image,priceSet:price,cAddress:item.categoryText,keyId:item.highestBid,userName:item.counter,userSymbol:"BNB",ipfsUrl:item.image,ownerAddress:accounts[0],
-              soldd:"",extra1:"readytosold",datesets:new Date().toDateString(),whois:'Sellers'
+              id:item.title,imageUrl:item.image,priceSet:price,cAddress:item.categoryText,keyId:item.highestBid,userName:item.counter,
+              userSymbol:"MATIC",
+              ipfsUrl:item.image,ownerAddress:accounts[0],
+              soldd:"",extra1:"readytosold",datesets:new Date().toDateString(),whois:'Sellers',league:item.league,team:item.team
 }).then(()=>{
+
+  //.child(item.league).child(item.team)
+  fireDb.database().ref(`imagerefPolylt`).child(item.highestBid).set({id:item.title,
+    imageUrl:item.image,priceSet:price,cAddress:item.categoryText,
+    keyId:item.highestBid,userName:item.counter,userSymbol:"MATIC",
+    ipfsUrl:item.image,ownerAddress:accounts[0],soldd:"",extra1:"readytosold",previousoaddress:"",datesets:new Date().toDateString(),
+    whois:'Sellers',league:item.league,team:item.team
+}).then(()=>{
+
+  setIsOpens(false);
+  setIsOpenss(true)
+  
+
+})
+
 
   //setTprice("");
   //setIsOpensetFirst(false);
   //setIsOpen(true);
-  setIsOpens(false);
-  setIsOpenss(true)
     //window.location.reload(false)   
 
 })
@@ -335,9 +348,18 @@ else{
             //   soldd:"",extra1:"readytosold",datesets:new Date().toDateString(),whois:'Sellers'
             // })            
 fireDb.database().ref(`imagerefPoly/${accounts[0]}`).child(item.highestBid).update({
-              id:item.title,imageUrl:item.image,priceSet:price,cAddress:item.categoryText,keyId:item.highestBid,userName:item.counter,userSymbol:"BNB",ipfsUrl:item.image,ownerAddress:accounts[0],
-              soldd:"",extra1:"readytosold",datesets:new Date().toDateString(),whois:'Sellers'
-}).then(()=>{
+              id:item.title,imageUrl:item.image,priceSet:price,cAddress:item.categoryText,keyId:item.highestBid,userName:item.counter,
+              userSymbol:"MATIC",ipfsUrl:item.image,ownerAddress:accounts[0],
+              soldd:"",extra1:"readytosold",datesets:new Date().toDateString(),whois:'Sellers',league:item.league,team:item.team
+            }).then(()=>{
+            
+              //.child(item.league).child(item.team)
+              fireDb.database().ref(`imagerefPolylt`).child(item.highestBid).set({id:item.title,
+                imageUrl:item.image,priceSet:price,cAddress:item.categoryText,keyId:item.highestBid,userName:item.counter,
+                userSymbol:"MATIC",
+              ipfsUrl:item.image,ownerAddress:accounts[0],soldd:"",extra1:"readytosold",previousoaddress:"",
+              datesets:new Date().toDateString(),whois:'Sellers',league:item.league,team:item.team
+            }).then(()=>{
 
   //setTprice("");
   //setIsOpensetFirst(false);
@@ -346,6 +368,7 @@ fireDb.database().ref(`imagerefPoly/${accounts[0]}`).child(item.highestBid).upda
   setIsOpens(false)
 
   setIsOpenss(true)
+            })
 
     //window.location.reload(false)   
 

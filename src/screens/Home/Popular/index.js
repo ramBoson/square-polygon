@@ -295,6 +295,8 @@ const directionOptions = ["Sellers", "Buyers"];
                 categoryText: a[b].cAddress,
                 //purchasing !
                 url: a[b].datesets,
+                league:a[b].league,
+              team:a[b].team,
                 users: [                
                   {
                     avatar: "/images/content/avatar-4.jpg",
@@ -347,6 +349,8 @@ const directionOptions = ["Sellers", "Buyers"];
                 categoryText: a[b].cAddress,
                 //purchasing !
                 url: a[b].datesets,
+                league:a[b].league,
+                team:a[b].team,
                 users: [                
                   {
                     avatar: "/images/content/avatar-4.jpg",
@@ -462,6 +466,7 @@ const directionOptions = ["Sellers", "Buyers"];
         <div className={styles.top}>
           <div className={styles.box}>
             <div className={styles.stage}>Popular</div>
+          
             <DropdownEmpty
               className={styles.dropdown}
               value={direction}

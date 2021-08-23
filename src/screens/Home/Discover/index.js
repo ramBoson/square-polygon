@@ -92,6 +92,8 @@ const Discover = () => {
                 categoryText: a[b].cAddress,
                 //purchasing !
                 url: "/",
+                league:a[b].league,
+                team:a[b].team,
                 users: [                
                   {
                     avatar: "/images/content/avatar-4.jpg",

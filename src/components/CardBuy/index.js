@@ -64,7 +64,8 @@ const CardBuy = ({ className, item }) => {
       userName:item.counter,userSymbol:"MATICMUM",ipfsUrl:item.image,
       ownerAddress:accounts[0],soldd:"",extra1:"ready to sold",
       previousoaddress:"",datesets:new Date().toDateString(),
-      description:"",whois:'likes'      
+      description:"",whois:'likes',  league:item.league,
+      team:item.team
       }).then(()=>{
         setVisible(!visible)
         window.location.reload(false)   
@@ -77,7 +78,7 @@ const CardBuy = ({ className, item }) => {
 
     console.log("inside usernameget function")
 
-    if(localStorage.getItem("wallet") === null){
+    if(localStorage.getItem("wallet") === null || localStorage.getItem("wallet") === "0x"){
 
     }
     else{
@@ -108,7 +109,7 @@ useEffect(()=>{usernameget()},[])
     console.log("inside buy function")
 
     
-    if(localStorage.getItem("wallet") === null){
+    if(localStorage.getItem("wallet") === null || localStorage.getItem("wallet") === "0x"){
 
     }
     else{
@@ -122,6 +123,10 @@ useEffect(()=>{usernameget()},[])
   //let gettrans=new web3.eth.Contract(tra,'0x2cA1655cceB43D27027e6676E880D1Ce4e7d7d18');
 
   //polygon
+  let percentagcrypterwallet = ((2*item.price)/100).toString();
+  console.log("checkpercentage",percentagcrypterwallet)
+  //let changepercentage = percentagcrypterwallet;
+
   let gettrans=new web3.eth.Contract(tra,'0x2Faf13681f0b9dAD5074E52CcAC3d614dbf84c83');
 
   let gettest=item.categoryText
@@ -148,6 +153,11 @@ useEffect(()=>{usernameget()},[])
   }
   else{
 
+    await gettrans.methods.sendss("0xD264b074c4a772E56536005Ae629518ee1bCc83a").send({
+      from: accounts[0],
+      //value:web3.utils.toWei(a.addPrices,'BNB')
+      value: web3.utils.toWei(percentagcrypterwallet,'ether')//ether
+     });
 
     await gettrans.methods.sendss(item.bid).send({
       from: accounts[0],
@@ -168,7 +178,8 @@ useEffect(()=>{usernameget()},[])
             keyId:item.highestBid,userName:item.counter,
             userSymbol:"MATICMUM",previousoaddress:item.bid,
             ipfsUrl:item.image,ownerAddress:accounts[0],soldd:"solded",extra1:"buyed",
-            datesets:new Date().toDateString(),whois:'Buyers'}).then(()=>{
+            datesets:new Date().toDateString(),whois:'Buyers',league:item.league,
+            team:item.team}).then(()=>{
               setIsOpenss(false)
               setIsOpens(true)
               
@@ -191,7 +202,8 @@ useEffect(()=>{usernameget()},[])
             keyId:item.highestBid,userName:item.counter,
             userSymbol:"MATICMUM",previousoaddress:item.bid,
             ipfsUrl:item.image,ownerAddress:accounts[0],soldd:"solded",extra1:"buyed",
-            datesets:new Date().toDateString(),whois:'Buyers'}).then(()=>{
+            datesets:new Date().toDateString(),whois:'Buyers',league:item.league,
+            team:item.team}).then(()=>{
               setIsOpenss(false)
               setIsOpens(true)
               

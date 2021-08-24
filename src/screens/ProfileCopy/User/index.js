@@ -178,14 +178,14 @@ const User = ({ className, item }) => {
 </div>
         </>):(
 <>
-          {getteamname === "Morrisville Cardinals" ? (
+          {localStorage.getItem("teamname") === "Morrisville Cardinals" ? (
 
 <div className={styles.avatar}>            
 <img src="/images/MorrisviCardinals.png" alt="Avatar" />
 </div>
           ):(
             <>
-            {getteamname === "Atlanta Fire" ? (
+            {localStorage.getItem("teamname") === "Atlanta Fire" ? (
 
               <div className={styles.avatar}>            
               <img src="/images/AustinAthletics.png" alt="Avatar" />
@@ -194,10 +194,20 @@ const User = ({ className, item }) => {
               
                         ):(
                           <>
-            {getteamname === "Dc Hawks" ? (
+            {localStorage.getItem("teamname") === "Dc Hawks" ? (
 
               <div className={styles.avatar}>            
               <img src="/images/DcHawks.png" alt="Avatar" />
+              </div>
+              
+              
+                        ):(
+              
+<>
+            {localStorage.getItem("teamname") === "Austin Athletics" ? (
+
+              <div className={styles.avatar}>            
+              <img src="/images/AustinAthletics.png" alt="Avatar" />
               </div>
               
               
@@ -207,6 +217,8 @@ const User = ({ className, item }) => {
               <img src="/images/EastBayBlazers.png" alt="Avatar" />
               </div>
                           
+                        )}
+                        </>                          
                         )}
 </>
               

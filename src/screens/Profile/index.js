@@ -257,6 +257,8 @@ const dbcallalgolikes=async()=>{
               league:value.league,
               team:value.team,
               type:value.type,
+              dimen:value.dimen,
+              teamlogo:value.teamlogo,      
               users: [                
                 {
                   avatar: "/images/content/avatar-4.jpg",
@@ -360,6 +362,8 @@ const dbcallsalealgo=async()=>{
               league:value.league,
               team:value.team,
               type:value.type,
+              dimen:value.dimen,
+              teamlogo:value.teamlogo,      
               users: [                
                 {
                   avatar: "/images/content/avatar-4.jpg",
@@ -415,6 +419,8 @@ const dbcallalgo=async()=>{
               league:value.league,
               team:value.team,
               type:value.type,
+              dimen:value.dimen,
+              teamlogo:value.teamlogo,      
               users: [                
                 {
                   avatar: "/images/content/avatar-4.jpg",
@@ -480,6 +486,8 @@ const dbcallalgobuy=async()=>{
               league:value.league,
               team:value.team,
               type:value.type,
+              dimen:value.dimen,
+              teamlogo:value.teamlogo,      
               users: [                
                 {
                   avatar: "/images/content/avatar-4.jpg",

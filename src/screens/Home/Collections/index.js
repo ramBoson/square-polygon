@@ -132,6 +132,7 @@ console.log("getlt",getImgreffalgobuy)
                 team:value.team,
                 type:value.type,
                 teamlogo:value.teamlogo,
+                dimen:value.dimen,
                 users: [                
                   {
                     avatar: "/images/content/avatar-4.jpg",
@@ -193,6 +194,7 @@ console.log("getlt",getImgreffalgobuy)
                 team:value.team,
                 type:value.type,
                 teamlogo:value.teamlogo,
+                dimen:value.dimen,
                 users: [                
                   {
                     avatar: "/images/content/avatar-4.jpg",

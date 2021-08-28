@@ -183,6 +183,16 @@ const Upload = () => {
 
   console.log("Sel2",selected2)
 
+  const [selected4, setSelected4] = React.useState("2D");
+
+  const changeSelectOptionHandler4 = (event) => {
+    setSelected4(event.target.value);
+  };
+
+  console.log("Sel4",selected4)
+
+  
+
 
   // const actionsextra = [
   //   {label:"Abhiram Bolisetty",value:1},
@@ -1934,11 +1944,12 @@ const dbstore=async()=>{
                       const db2 = ref22.push().key;                         
                       console.log("dbcheck",db)
                       ref2.child(db).set({id:te,imageUrl:Img,priceSet:"",cAddress:getData,keyId:db,userName:ta,userSymbol:tb,
-                      ipfsUrl:Img,ownerAddress:accounts[0],soldd:"",extra1:"",previousoaddress:"",datesets:dateset,whois:'',league:selected,team:selected2,type:selected3,teamlogo:selectedImg})
+                      ipfsUrl:Img,ownerAddress:accounts[0],soldd:"",extra1:"",previousoaddress:"",datesets:dateset,whois:'',league:selected,team:selected2,type:selected3,
+                      teamlogo:selectedImg,dimen:selected4})
                       .then(()=>{
 
                       ref22.child(db).set({id:te,imageUrl:Img,priceSet:"",cAddress:getData,keyId:db,userName:ta,userSymbol:tb,
-                      ipfsUrl:Img,ownerAddress:accounts[0],soldd:"",extra1:"",previousoaddress:"",datesets:dateset,whois:'',league:selected,team:selected2,type:selected3,teamlogo:selectedImg})
+                      ipfsUrl:Img,ownerAddress:accounts[0],soldd:"",extra1:"",previousoaddress:"",datesets:dateset,whois:'',league:selected,team:selected2,type:selected3,teamlogo:selectedImg,dimen:selected4})
                       .then(()=>{
                         setIsOpens(false)
                       setIsOpen(true);
@@ -2108,6 +2119,14 @@ const callof=()=>{
             <option value='Others'>Others</option>
           </select>
 </div>
+
+<div className={styles.fieldset} >
+<select onChange={changeSelectOptionHandler4} style={{width:"100%"}}>
+            <option value='2D'>2D</option>
+            <option value='3D'>3D</option>
+          </select>
+</div>
+
         {/* <div className={styles.stage}>Popular</div>
         <DropdownEmpty
               className={styles.dropdown}

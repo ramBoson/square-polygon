@@ -94,6 +94,7 @@ const Discover = () => {
                 url: "/",
                 league:a[b].league,
                 team:a[b].team,
+                type:a[b].type,
                 users: [                
                   {
                     avatar: "/images/content/avatar-4.jpg",

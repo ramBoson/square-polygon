@@ -88,6 +88,7 @@ const Search = (props) => {
                 url: a[b].history,
                 league:a[b].league,
                 team:a[b].team,
+                type:a[b].type,
                 users: [                
                   {
                     avatar: "/images/content/avatar-4.jpg",
@@ -101,6 +102,17 @@ const Search = (props) => {
   //}  
 }
   useEffect(()=>{dbcallsaleal()},[])
+
+
+
+
+  //new try
+
+  
+
+
+
+  //new try end
 
   // const dbcallsalealgo=async()=>{
   //   console.log("inside dbcallsalealgo function")

@@ -65,7 +65,7 @@ const CardBuy = ({ className, item }) => {
       ownerAddress:accounts[0],soldd:"",extra1:"ready to sold",
       previousoaddress:"",datesets:new Date().toDateString(),
       description:"",whois:'likes',  league:item.league,
-      team:item.team
+      team:item.team,type:item.type,
       }).then(()=>{
         setVisible(!visible)
         window.location.reload(false)   
@@ -178,7 +178,7 @@ useEffect(()=>{usernameget()},[])
             keyId:item.highestBid,userName:item.counter,
             userSymbol:"MATICMUM",previousoaddress:item.bid,
             ipfsUrl:item.image,ownerAddress:accounts[0],soldd:"solded",extra1:"buyed",
-            datesets:new Date().toDateString(),whois:'Buyers',league:item.league,
+            datesets:new Date().toDateString(),whois:'Buyers',league:item.league,type:item.type,
             team:item.team}).then(()=>{
               setIsOpenss(false)
               setIsOpens(true)
@@ -203,7 +203,7 @@ useEffect(()=>{usernameget()},[])
             userSymbol:"MATICMUM",previousoaddress:item.bid,
             ipfsUrl:item.image,ownerAddress:accounts[0],soldd:"solded",extra1:"buyed",
             datesets:new Date().toDateString(),whois:'Buyers',league:item.league,
-            team:item.team}).then(()=>{
+            team:item.team,type:item.type,}).then(()=>{
               setIsOpenss(false)
               setIsOpens(true)
               

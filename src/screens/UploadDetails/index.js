@@ -2108,8 +2108,6 @@ const callof=()=>{
             <option value='Others'>Others</option>
           </select>
 </div>
-
-
         {/* <div className={styles.stage}>Popular</div>
         <DropdownEmpty
               className={styles.dropdown}

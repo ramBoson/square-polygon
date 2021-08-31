@@ -38,7 +38,7 @@ const Connect = () => {
         //window.ethereum.enable();
         //const currProvider = window.web3.currentProvider;
       
-        if(localStorage.getItem("wallet") === null || localStorage.getItem("wallet") === "0x" || localStorage.getItem("wallet") === 'undefined' ){
+        if(localStorage.getItem("wallet") === null || localStorage.getItem("wallet") === "0x" || localStorage.getItem("wallet") === 'undefined' || localStorage.getItem("wallet") === '' ){
 
           console.log("checklocal",localStorage.getItem("wallet"))
           

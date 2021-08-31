@@ -74,7 +74,7 @@ const Connect = () => {
     console.log("dateget",dateset)
     const db = refprofile.push().key;
     console.log("dbcheck",db)
-          refprofile.set({profileurl:"aaa",displayname:"aaa",http:"",Bio:"",social:"",Twitter:"",address:accounts[0],dbkey:"",username:"bbb"}).then(()=>{                      
+          refprofile.set({profileurl:"aaa",displayname:"aaa",http:"",Bio:"",social:"",Twitter:"",address:"",dbkey:"",username:"bbb"}).then(()=>{                      
           })                
           setIsOpen(true)        
         }).then(()=>{

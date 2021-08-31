@@ -761,6 +761,9 @@ const onSubmitNFT = async (event) => {
 
     if(localStorage.getItem("wallet") === null || localStorage.getItem("wallet") === "0x" || localStorage.getItem("wallet") === undefined){
 
+
+      console.log("Empty",localStorage.getItem("wallet"))
+
     }
     else{
 

@@ -38,7 +38,7 @@ const Connect = () => {
         //window.ethereum.enable();
         //const currProvider = window.web3.currentProvider;
       
-        if(localStorage.getItem("wallet") === null || localStorage.getItem("wallet") === undefined){
+        if(localStorage.getItem("wallet") === null){
 
           console.log("checklocal",localStorage.getItem("wallet"))
           let accounts=await web3.eth.getAccounts();
@@ -54,7 +54,7 @@ const Connect = () => {
     const db = refprofile.push().key;
     console.log("dbcheck",db)
     
-          refprofile.set({profileurl:"aaa",displayname:"aaa",http:"",Bio:"",social:"",Twitter:"",address:accounts[0],dbkey:"",username:"bbb"}).then(()=>{                      
+          refprofile.set({profileurl:"aaa",displayname:"aaa",http:"",Bio:"",social:"",Twitter:"",address:"",dbkey:"",username:"bbb"}).then(()=>{                      
           })                
          }).then(()=>{    
           

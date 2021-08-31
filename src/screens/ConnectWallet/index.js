@@ -38,7 +38,7 @@ const Connect = () => {
         //window.ethereum.enable();
         //const currProvider = window.web3.currentProvider;
       
-        if(localStorage.getItem("wallet") === null || localStorage.getItem("wallet") === undefined || localStorage.getItem("wallet") === "undefined"){
+        if(localStorage.getItem("wallet") === null || localStorage.getItem("wallet") === undefined){
 
           console.log("checklocal",localStorage.getItem("wallet"))
           let accounts=await web3.eth.getAccounts();
@@ -84,7 +84,7 @@ const Connect = () => {
 
           console.log("checklocalcon",localStorage.getItem("wallet"))
           let accounts=await web3.eth.getAccounts();
-        await web3.eth.getAccounts().then(()=>{          
+          await web3.eth.getAccounts().then(()=>{            
           console.log("acc Algo",accounts[0])
           localStorage.setItem("wallet",accounts[0])
           localStorage.setItem("walletpoly",("https://mumbai.polygonscan.com/address/"+accounts[0]));
